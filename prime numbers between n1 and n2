@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n1 = scanner.nextInt();
+        int n2 = scanner.nextInt();
+        printPrimeNumbers(n1, n2);
+    }
+
+    public static void printPrimeNumbers(int n1, int n2) {
+        // Loop from the starting number to the ending number
+        for (int i = n1; i <= n2; i++) {
+            int count = 0;
+
+            // Count how many numbers divide 'i' perfectly
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++; 
+                }
+            }
+
+            // Prime numbers have exactly 2 factors (1 and itself)
+            if (count == 2) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
