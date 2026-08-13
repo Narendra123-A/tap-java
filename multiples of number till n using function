@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void multiples(int n,int x) 
+	{
+		for(int i=1;i<=x;i++)
+		{
+		    if(i%n==0)
+		    {
+		        System.out.print(i+" ");
+		    }
+		}
+	}
+	public static void main(String[] args)
+	{
+	    Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+	    int x=sc.nextInt();
+	    multiples(n,x);
+	    
+	}
+}
