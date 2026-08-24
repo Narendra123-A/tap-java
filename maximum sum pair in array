@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main
+{
+    public static int Maxpairsum(int arr[])
+    {
+        int large = Integer.MIN_VALUE;
+        int second_large = Integer.MIN_VALUE;
+
+        for(int i = 0; i < arr.length; i++)
+        {
+            if(arr[i] > large)
+            {
+                second_large = large;
+                large = arr[i];
+            }
+            else if(arr[i] > second_large)
+            {
+                second_large = arr[i];
+            }
+        }
+
+        return large + second_large;
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        for(int i = 0; i < n; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+
+        int res = Maxpairsum(arr);
+        System.out.print(res);
+    }
+}
